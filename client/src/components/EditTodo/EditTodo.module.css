@@ -3,31 +3,33 @@
 .container{
  margin:0 auto;
  text-align: auto;
- border:1px solid grey;
- width:35%;
+ width:50%;
 }
 
 .title{
- text-transform: uppercase;
- font-weight: bold;
- font-family: Arial, Helvetica, sans-serif;
- color:orange;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size:1.2rem;
+  font-family: 'Rubik', sans-serif;
+  color:rgb(0, 0, 0);
 }
 
 .editInput{
   border-radius: 3px;
-  padding:0.2rem;
-  border:1pxs solid grey;
-  outline: none;
+ padding:0.6rem;
+ width:80%;
+ border:1px solid rgb(172, 172, 172);
+ outline: none;
 }
 
 .button{
- border-radius: 3px ;
- padding:0.2rem 0.3rem;
- margin:0 1rem;
- background-color: rgb(123, 123, 216);
- color:white;
- outline: none;
- border:1px solid rgb(123, 123, 216);
- cursor:pointer;
+  border-radius: 3px ;
+  padding:0.5rem 0.9rem;
+  margin:0 0.5rem;
+  background-color:#bb8ef5;
+  color:white;
+  outline: none;
+  border:1px solid #bb8ef5;
+  cursor:pointer;
+  transition: 0.2s all ease;
 }

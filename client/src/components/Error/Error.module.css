@@ -1,0 +1,7 @@
+
+.errorTag{
+ background-color: rgb(236, 144, 144);
+ border: 1px solid rgb(248, 28, 28);
+ padding:0.5rem;
+ border-radius: 4px;;
+}

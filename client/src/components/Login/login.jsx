@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {loginUser} from "../../sign";
 import {Redirect} from "react-router-dom";
 import Error from "../Error/Error";
+import styles from "../Register/Register.module.css";
 
 
 import axios from "axios";
@@ -76,14 +77,15 @@ export default function Login() {
 
 
   return (
-    <form onSubmit={handleLogin}>
+    <form onSubmit={handleLogin}  className={styles.form}>
        {(log.login === true) ? renderToHome() : ""}
       <h1>Login </h1>
       {/* display the error message */}
       {error && <Error error={error} />}
 
-      <label>username</label>
+      <label className={styles.label}>username</label>
       <input
+        className={styles.inputField}
         name='username'
         placeholder='Username'
         value={user.username}
@@ -91,8 +93,9 @@ export default function Login() {
         /><br/>
 
 
-      <label>Password</label>
+      <label className={styles.label}>Password</label>
       <input
+        className={styles.inputField}
         type='password'
         name='password'
         placeholder='Password'
@@ -100,7 +103,7 @@ export default function Login() {
         onChange={(e) => handleChange(e)}
         /><br/>
 
-      <input type='submit'/>
+      <input  className={styles.button} type='submit'/>
     </form>
   )
 }

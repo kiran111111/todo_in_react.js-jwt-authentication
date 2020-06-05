@@ -23,7 +23,7 @@ const validate = (req, res, next) => {
   errors.array().map(err => extractedErrors.push((err.msg)))
  
  res.locals.errors = extractedErrors;
- res.render("register")
+//  res.redirect("/")
 }
 
 module.exports = {

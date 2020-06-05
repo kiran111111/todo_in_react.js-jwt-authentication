@@ -1,27 +1,82 @@
 
 
 .container{
-  margin:0 auto;
+  margin:4rem auto;
   text-align: auto;
-  border:1px solid grey;
-  width:50%;
+  /* border:1px solid grey; */
+  width:70%;
 }
 
-.title{
+.todo__title{
   text-transform: uppercase;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  color:orange;
+  font-weight: lighter;
+  font-size:1.2rem;
+  font-family: 'Rubik', sans-serif;
+  color:rgb(0, 0, 0);
+}
+
+
+.todoInput{
+ border-radius: 3px;
+ padding:0.6rem;
+ width:80%;
+ border:1px solid rgb(172, 172, 172);
+ outline: none;
+}
+
+.button{
+ border-radius: 3px ;
+ padding:0.5rem 0.9rem;
+ margin:0 0.5rem;
+ background-color:#bb8ef5;
+ color:white;
+ outline: none;
+ border:1px solid #bb8ef5;
+ cursor:pointer;
+ transition: 0.2s all ease;
+}
+
+.button:hover{
+ background-color: #a065ec;
+ border:1px solid #a065ec;
+}
+
+
+/* Styling the list of todos entered */
+
+.todolist{
+  width:70%;
+  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo__name{
+  flex:3;
+  display: inline-block;
+  width:85%;
+  padding:0.5rem 0.5rem;
+  /* border-bottom:1px solid grey;; */
+}
+
+
+.todo__icons{
+  flex:1;
+  display: inline-block;
 }
 
 .todolist ul li{
-  list-style-type: circle;
+  list-style-type: none;
   text-align: left;
+  padding:0.3rem 0rem;
+  margin-right:3rem;
+  border-bottom:2px solid #bb8ef5;;
 }
 
 .deleteIcon{
   cursor: pointer;
   margin:0 0.5rem;
+  font-size: 1.3rem;;
 }
 
 .deleteIcon:hover{
@@ -31,31 +86,11 @@
 
 .editIcon{
    cursor: pointer;
-   color:rgb(41, 131, 235);
+   color:#000000;
+   font-size: 1.3rem;;
+   padding-top:1rem;
 }
 
 .editIcon:hover{
- color:rgb(22, 22, 143);
-}
-
-.todoInput{
- border-radius: 3px;
- padding:0.2rem;
- border:1pxs solid grey;
- outline: none;
-}
-
-.button{
- border-radius: 3px ;
- padding:0.2rem 0.3rem;
- margin:0 1rem;
- background-color: rgb(123, 123, 216);
- color:white;
- outline: none;
- border:1px solid rgb(123, 123, 216);
- cursor:pointer;
-}
-
-.button:hover{
- background-color: rgb(102, 102, 182)
+ color:#820df0;
 }

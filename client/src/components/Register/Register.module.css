@@ -1,0 +1,51 @@
+
+
+
+.title{
+ text-transform: uppercase;
+  font-weight: lighter;
+  font-size:1.2rem;
+  font-family: 'Rubik', sans-serif;
+  color:rgb(0, 0, 0);
+  text-decoration: underline ;
+}
+
+/* Form labels and input fields  */
+.form{
+ width:50%;
+ margin:0 auto;
+}
+
+.label{
+ display: block;
+ text-align: left;
+ margin:0 3.5rem;
+ padding-top:1rem;
+ padding-bottom: 0.3rem;;
+}
+
+.inputField{
+ border-radius: 3px;
+ padding:0.6rem;
+ width:80%;
+ border:1px solid rgb(172, 172, 172);
+ outline: none;
+}
+
+
+.button{
+ border-radius: 3px ;
+ padding:0.7rem 1rem;
+ margin:1rem 0.5rem;
+ background-color:#bb8ef5;
+ color:white;
+ outline: none;
+ border:1px solid #bb8ef5;
+ cursor:pointer;
+ transition: 0.2s all ease;
+}
+
+.button:hover{
+ background-color: #a065ec;
+ border:1px solid #a065ec;
+}

@@ -44,8 +44,8 @@ export default function EditTodo(props) {
  return (
   <div className={styles.container}>
   {(state.edited  === true) ? redirectToTodo() : ""}
-   <p className={styles.title}>Welcome to the edit page  { vars && ` of ${vars.id}`}</p>
-
+   {/* <p className={styles.title}> EDIT YOUR TODO  { vars && ` of ${vars.id}`}</p> */}
+   <p className={styles.title}> EDIT YOUR TODO</p>
   {/* display the error message */}
   {error && <Error error={error} />}
 

@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import {Link} from "react-router-dom";
+import styles from "./Home.module.css";
 import axios from 'axios';
 
 
@@ -21,26 +22,33 @@ export default function Home(props) {
 
   // Structure of the home page
  return (
-  <div>
+  <div className={styles.container}>
         {user ? 
-        <div>
-          <Link to="/">Home </Link> 
-          <Link to="/shop">Shop </Link>
-          <Link to="/logout">Logout</Link>
-          <Link to="/todolist">TodoList</Link>
+        <div className={styles.navbar}>
+          <div><Link to="/" className={styles.link}> Home </Link> </div>
+          <div><Link to="/todolist" className={styles.link}>TodoList</Link></div>
+          <div><Link to="/logout" className={styles.link}>Logout</Link></div>
          </div>
         :
-        <div>
-          <Link to="/">Home </Link> 
-          <Link to="/register"> Register </Link> 
-          <Link to="/login">Login</Link>
+        <div  className={styles.navbar}>
+            <div><Link to="/" className={styles.link}>Home </Link> </div>
+            <div><Link to="/register" className={styles.link}> Register </Link> </div>
+            <div> <Link to="/login" className={styles.link}>Login</Link></div>
         </div>
          }
         
         <div>
-          <h3>{user ? user : ' '} Welcome to the Home Page</h3>
+          <h3 className={styles.title}>
+            {user ? 
+              <span className={styles.username}>
+                 {user} 
+              </span>
+                  : 
+              ' '
+            } 
+             Welcome to the Home Page
+         </h3>
       </div>
   </div>
-  
  )
 }

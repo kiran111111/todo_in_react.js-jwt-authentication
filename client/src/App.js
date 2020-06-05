@@ -4,7 +4,6 @@ import {Route,Switch} from "react-router-dom";
 import Register from "./components/Register/Register";
 import Home from "./components/Home/Home";
 import login from "./components/Login/login"
-import Shop from "./components/Shop/Shop";
 import TodoList from "./components/TodoList/TodoList";
 import EditTodo from "./components/EditTodo/EditTodo";
 import axios from 'axios';
@@ -14,9 +13,8 @@ function App() {
 
   return (
     <div className="App">
-       <Route path="/" component={Home} name={localStorage.getItem("user")} />
+        <Route path="/" component={Home} name={localStorage.getItem("user")} />
        <Switch>
-          <Route path="/shop" component={Shop} exact />
           <Route path="/todolist" component={TodoList}></Route> 
           <Route path="/edit" component={EditTodo}></Route>
           <Route path="/register" component={Register} exact />

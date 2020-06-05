@@ -64,19 +64,20 @@ export default function TodoList() {
 
    {error ? "" : 
     <>
-     <p className={styles.title}>Here are all your todos</p>
+     <p className={styles.todo__title}>todos</p>
     <div>
       <label htmlFor="name"></label>
       <input 
         className={styles.todoInput}
         type="text"
         id="name" 
+        placeholder="Enter your task..."
         value={todo}
         onChange={(e)=>setTodo(e.target.value)}
         name="name">
       </input>
       <button
-        className={styles.button,styles.add}
+        className={styles.button}
         type="button" 
         onClick={createTodos}
        >
@@ -88,19 +89,24 @@ export default function TodoList() {
         {todos.map(({name,_id},i)=>{
           return (
             <li key={i}>
+              <div className={styles.todo__name}>
                 {name}
-            <span className={styles.deleteIcon} onClick={e => deleteTodos(e, _id)}> 
-               <i className="fa fa-trash"></i>
-             </span>
-            <Link className={styles.editIcon} to={{
-              pathname:"/edit/"+_id,
-              editProps:{
-                    todo : name,
-                    id : _id
-                    }
-                  }}> 
-                <i className="fa fa-edit"></i>
-              </Link>
+              </div>  
+            
+              <div className={styles.todo__icons}>
+                <span className={styles.deleteIcon} onClick={e => deleteTodos(e, _id)}> 
+                  <i className="fa fa-trash"></i>
+                </span>
+                <Link className={styles.editIcon} to={{
+                  pathname:"/edit/"+_id,
+                  editProps:{
+                        todo : name,
+                        id : _id
+                        }
+                      }}> 
+                    <i className="fa fa-edit"></i>
+                  </Link>
+              </div>  
             </li>
             )
         })}
