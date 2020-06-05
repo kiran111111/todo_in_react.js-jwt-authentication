@@ -4,9 +4,6 @@ import {Redirect} from "react-router-dom";
 import Error from "../Error/Error";
 import styles from "./Register.module.css";
 
-// Todo: There is some error in the TODO route 
-// ! Check it soon and FIX  IT ? ASAP!!!!!!!!!
-// !-----------------------------------------------------------------------------------------------------------------------------------------
   
 const initialState = {
   username : '',
@@ -16,7 +13,6 @@ const initialState = {
   nameError:'',
   passwordError:'',
   userIsValid :false
-
 }
 
 
@@ -29,8 +25,7 @@ export default function Register(props) {
 // handle input change event
   function handleChange(evt) {
    const value = evt.target.value;
-   setUser({
-     ...user,
+   setUser({...user,
      [evt.target.name]: value
    });
   }
@@ -40,7 +35,7 @@ export default function Register(props) {
   // validate before refistering user
   const registerValidation = () =>{
 
-    var passpat = /^[a-zA-Z0-9-_][^(?|#|*|@|&|\.\ )]{7,20}$/;
+    var passpat = /^(?!.* )(?=.*\d)(?=.*[A-Z]).{8,15}$/;
     const {username,name,password} = user;
 
     // console.log(user)
@@ -58,13 +53,20 @@ export default function Register(props) {
     if (!username.includes("@")) {
       userNameError = "invalid email";
     }
-
-    else if(passpat.test(password) === false ){
-      passwordError =  "Atleast one uppercase ,of 8 letters, no spaces , no Special symbol";
+    console.log(passpat.test(password.trim()))
+    if(passpat.test(password) === false ){
+      passwordError =  "Atleast one uppercase , 8-15 characters , Atleast one number and  no spaces ";
     }
 
     if(nameError || userNameError  || passwordError){
-      setUser({nameError,userNameError,passwordError,username:username,name:name});
+      setUser({
+        nameError,
+        userNameError,
+        passwordError,
+        username:username,
+        name:name,
+        password:password
+      });
       // console.log(user)
       return false;
     }

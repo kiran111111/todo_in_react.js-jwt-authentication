@@ -79,7 +79,7 @@ export default function Login() {
   return (
     <form onSubmit={handleLogin}  className={styles.form}>
        {(log.login === true) ? renderToHome() : ""}
-      <h1>Login </h1>
+      <h1 className={styles.title}>Login </h1>
       {/* display the error message */}
       {error && <Error error={error} />}
 
