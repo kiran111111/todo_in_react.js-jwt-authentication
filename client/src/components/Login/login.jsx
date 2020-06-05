@@ -39,7 +39,7 @@ export default function Login() {
       localStorage.setItem("user",res.data.user.name)
        let token = localStorage.getItem('token') ;
        let user = localStorage.getItem('user')
-       console.log('token is '+ token)
+      //  console.log('token is '+ token)
 
        if(token){
          setLogin({
@@ -50,15 +50,15 @@ export default function Login() {
           const token = localStorage.getItem('token')
           if(token){
             axios.defaults.headers.common['Authorization'] = token;
-            console.log(axios.defaults.headers)
+            // console.log(axios.defaults.headers)
           }
         }
         
     }).catch((err) => {
-      console.log(err.response)
+      // console.log(err.response)
       const errorMessage = err.response.data.error;
       setErrorMessage(errorMessage)
-      console.log(error)
+      // console.log(error)
     });
   }
 

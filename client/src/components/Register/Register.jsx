@@ -16,6 +16,7 @@ const initialState = {
 }
 
 
+
 export default function Register(props) {
 
   const [user, setUser] = useState(initialState)
@@ -44,18 +45,18 @@ export default function Register(props) {
     let passwordError = "";
 
     if(!name){
-      nameError = 'name cannot be blank'
+      nameError = 'Name cannot be blank'
     }
     if(!username){
-      userNameError = 'username cannot be blank'
+      userNameError = 'Username cannot be blank'
     }
     // console.log(username.includes("@"))
     if (!username.includes("@")) {
-      userNameError = "invalid email";
+      userNameError = "Invalid email";
     }
-    console.log(passpat.test(password.trim()))
+  
     if(passpat.test(password) === false ){
-      passwordError =  "Atleast one uppercase , 8-15 characters , Atleast one number and  no spaces ";
+      passwordError =  "Atleast one uppercase , 8-15 Characters , Atleast one number and  No spaces ";
     }
 
     if(nameError || userNameError  || passwordError){
@@ -83,7 +84,6 @@ export default function Register(props) {
     event.preventDefault();
     
    const isValid = registerValidation()
-   console.log(isValid)
     if(isValid){
       await registerUser(user)
         .then(function(res){
@@ -124,7 +124,7 @@ export default function Register(props) {
         value={user.username}
         onChange={(e) => handleChange(e)}
         /><br/>
-      <div>{user.userNameError}</div>  
+      <div className={styles.validationError}>{user.userNameError}</div>  
 
 
      <label className={styles.label}>Name</label>
@@ -139,7 +139,7 @@ export default function Register(props) {
         }
       />
       <br/> 
-      <div>{user.nameError}</div>  
+      <div  className={styles.validationError}>{user.nameError}</div>  
 
       <label className={styles.label}>Password</label>
       <input
@@ -150,7 +150,7 @@ export default function Register(props) {
         value={user.password}
         onChange={(e) => handleChange(e)}
         /><br/>
-        <div>{user.passwordError}</div>  
+        <div  className={styles.validationError}>{user.passwordError}</div>  
 
       <input className={styles.button} type='submit'/>
     </form>

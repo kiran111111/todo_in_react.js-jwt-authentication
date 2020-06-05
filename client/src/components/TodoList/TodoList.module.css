@@ -45,7 +45,7 @@
 /* Styling the list of todos entered */
 
 .todolist{
-  width:70%;
+  width:80%;
   margin:0 auto;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@
 .todo__name{
   flex:3;
   display: inline-block;
-  width:85%;
+  width:80%;
   padding:0.5rem 0.5rem;
   /* border-bottom:1px solid grey;; */
 }

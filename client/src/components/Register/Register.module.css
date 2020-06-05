@@ -1,6 +1,4 @@
 
-
-
 .title{
  text-transform: uppercase;
   font-weight: lighter;
@@ -48,4 +46,10 @@
 .button:hover{
  background-color: #a065ec;
  border:1px solid #a065ec;
+}
+
+.validationError{
+  color:red;
+  text-align: left;
+  margin:0 3.5rem;
 }
