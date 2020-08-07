@@ -35,6 +35,7 @@ export default function Login() {
     event.preventDefault()
     await loginUser(user)
     .then((res) =>{
+      console.log(res.data)
       localStorage.setItem("token",res.data.token)
       localStorage.setItem("user",res.data.user.name)
        let token = localStorage.getItem('token') ;
@@ -55,10 +56,9 @@ export default function Login() {
         }
         
     }).catch((err) => {
-      // console.log(err.response)
       const errorMessage = err.response.data.error;
       setErrorMessage(errorMessage)
-      // console.log(error)
+      console.log(err)
     });
   }
 

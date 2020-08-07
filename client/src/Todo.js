@@ -1,28 +1,30 @@
  
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/'
+const API_URL = 'http://localhost:5000'
+// const API_URL = process.env.REACT_APP_URL;
 
 async function createTodo(name){
-  const { data: newTodo } = await axios.post(API_URL, {
+  const { data: newTodo } = await axios.post("", {
     name,
   })
   return newTodo;
 }
 
 async function deleteTodo(id) {
- const {data :message} = await axios.get(`${API_URL}delete/${id}`)
+ const {data :message} = await axios.delete(`/delete/${id}`)
+ console.log(message)
  return message;
 }
 
 
 async function getAllTodos(){
-  return  await axios.get(API_URL);
+  return  await axios.get("/todolist");
 }
 
 
 async function editTodos(id,payload){
-  return  await axios.post(`${API_URL}edit/${id}`,payload);
+  return  await axios.post(`/edit/${id}`,payload);
  } 
  
 

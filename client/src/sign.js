@@ -1,21 +1,23 @@
 import React from 'react';
 import axios from 'axios';
 
+const API_URL = 'http://localhost:5000';
+// const API_URL = process.env.REACT_APP_URL;
 
 
 export async function registerUser(user){
-  return await axios.post('http://localhost:5000/register',user)
+  return await axios.post(`/register`,user)
 }
 
 
 export function loginUser(user){
- const data =   axios.post('http://localhost:5000/login',user);
+ const data =   axios.post(`/login`,user);
  return data;
 } 
 
 
 export function goToShop(user){
- const data = axios.get('http://localhost:5000/shop')
+ const data = axios.get(`/shop`)
  return data;
 } 
 

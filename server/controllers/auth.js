@@ -21,7 +21,7 @@ const User = mongoose.model("Users",userSchema);
 module.exports = () =>{
 
   //Routing for todo app
-  router.get("/",verifyToken,async (req,res,next)=>{
+  router.get("/todolist",verifyToken,async (req,res,next)=>{
 
     User.findById(req.userId, { password: 0 },async function (err, user) {
       if (err) return res.status(500).send("There was a problem finding the user.");
@@ -50,7 +50,7 @@ module.exports = () =>{
 
 
   // Route for posting a new todo:
-router.post("/",(req,res)=>{
+router.post("/todolist",(req,res)=>{
   let todo = new Todo({
    name:req.body.name
   });
@@ -67,7 +67,7 @@ router.post("/",(req,res)=>{
 
 
  // Route for deleting a Todo:
-router.get("/delete/:id",async (req,res,next)=>{
+router.delete("/delete/:id",async (req,res,next)=>{
   let query = { _id: req.params.id };
    try{
     await Todo.deleteOne(query,(err,todo)=>{

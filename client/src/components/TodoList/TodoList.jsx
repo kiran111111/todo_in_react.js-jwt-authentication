@@ -18,8 +18,9 @@ export default function TodoList() {
  const fetchTodoAndSetTodos = async () => {
     await Todo.getAllTodos()
     .then(res =>{
-      // console.log(res)
+      console.log(res)
       const todos = res.data;
+
       setTodos(todos)
     }).catch(err=>{
       // console.log(err.response)

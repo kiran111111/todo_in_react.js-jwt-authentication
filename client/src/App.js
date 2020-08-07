@@ -15,7 +15,8 @@ function App() {
     <div className="App">
         <Route path="/" component={Home} name={localStorage.getItem("user")} />
        <Switch>
-          <Route path="/todolist" component={TodoList}></Route> 
+          <Route path="/todolist/" component={TodoList}></Route> 
+          <Route path="/todolist/:id" component={TodoList}></Route> 
           <Route path="/edit" component={EditTodo}></Route>
           <Route path="/register" component={Register} exact />
           <Route path="/login" component={login} />

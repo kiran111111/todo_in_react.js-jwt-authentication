@@ -83,9 +83,6 @@ app.use(function(req, res, next) {
 
 
 
-
-
-
-app.listen(5000 ,()=>{
+app.listen(process.env.PORT ,()=>{
   console.log(`App is running at port : 5000`)
 })

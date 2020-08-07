@@ -4,8 +4,9 @@ const mongo = require("mongo");
 const mongoose = require("mongoose");
 
 
-// const db = process.env.MONGODB;
-const db =  "mongodb+srv://kiran:kiran@cluster0-zrsby.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass%20Community&retryWrites=true&ssl=true";
+// const API_URL = process.env.REACT_APP_URL;
+const db = process.env.MONGODB;
+// const db =  "mongodb+srv://kiran:kiran@cluster0-zrsby.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass%20Community&retryWrites=true&ssl=true";
 
 // Connecting to the database-----
 const ConnectDB = async ()=>{
