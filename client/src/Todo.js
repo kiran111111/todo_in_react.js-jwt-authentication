@@ -12,7 +12,7 @@ async function createTodo(name){
 }
 
 async function deleteTodo(id) {
- const {data :message} = await axios.delete(`/delete/${id}`)
+ const {data :message} = await axios.get('/delete/'+id)
  console.log(message)
  return message;
 }

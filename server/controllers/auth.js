@@ -67,7 +67,7 @@ router.post("/todolist",(req,res)=>{
 
 
  // Route for deleting a Todo:
-router.delete("/delete/:id",async (req,res,next)=>{
+router.get("/todolist/:id",async (req,res,next)=>{
   let query = { _id: req.params.id };
    try{
     await Todo.deleteOne(query,(err,todo)=>{

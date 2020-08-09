@@ -4,7 +4,7 @@ import Error from "../Error/Error";
 import styles from './TodoList.module.css';
 import { Link } from "react-router-dom";
 import 'font-awesome/css/font-awesome.min.css';
-
+import axios from "axios";
 
 
 export default function TodoList() {
@@ -51,8 +51,11 @@ export default function TodoList() {
 
   const deleteTodos = async (e, id) => {
     e.stopPropagation()
-    const todos = await Todo.deleteTodo(id)
+    // const todos = await Todo.deleteTodo(id)
+    const todos = await axios.get('http://localhost:3000/todolist/'+id);
+    console.log(todos)
     setTodos(todos)
+    fetchTodoAndSetTodos()
   }
 
 
@@ -87,6 +90,8 @@ export default function TodoList() {
   </div>
     <div className={styles.todolist}>
       <ul>
+       {todos.length > 0 ? 
+       <>
         {todos.map(({name,_id},i)=>{
           return (
             <li key={i}>
@@ -109,8 +114,10 @@ export default function TodoList() {
                   </Link>
               </div>  
             </li>
-            )
+            ) 
         })}
+        </>
+        : "Feel free to add a Todo"} 
       </ul>
      </div>
     </>
