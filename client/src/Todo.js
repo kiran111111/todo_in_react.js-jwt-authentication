@@ -1,8 +1,8 @@
  
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000'
-// const API_URL = process.env.REACT_APP_URL;
+// const API_URL = 'http://localhost:5000'
+const API_URL = process.env.REACT_APP_URL;
 
 async function createTodo(name){
   const { data: newTodo } = await axios.post("", {
