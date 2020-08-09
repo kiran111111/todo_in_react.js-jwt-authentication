@@ -74,6 +74,23 @@ app.get('*', function(req, res, next){
 app.use("/",router());
 
 
+
+if (process.env.NODE_ENV === 'production') {
+
+  var accessLogStream = rfs.createStream('access.log', {
+      interval: '1d', // rotate daily
+      path: path.join(__dirname, 'log')
+  });
+  app.use(morgan('combined', { stream: accessLogStream }));
+
+  app.use(express.static('client/build'));
+  app.get('*', (req, res, next) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+
+}
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -84,5 +101,5 @@ app.use(function(req, res, next) {
 
 
 app.listen(process.env.PORT ,()=>{
-  console.log(`App is running at port : 5000`)
+  console.log(`App is running at port : ${process.env.PORT}`)
 })
