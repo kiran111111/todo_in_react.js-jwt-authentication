@@ -77,11 +77,11 @@ app.use("/",router());
 
 if (process.env.NODE_ENV === 'production') {
 
-  var accessLogStream = rfs.createStream('access.log', {
-      interval: '1d', // rotate daily
-      path: path.join(__dirname, 'log')
-  });
-  app.use(morgan('combined', { stream: accessLogStream }));
+  // var accessLogStream = rfs.createStream('access.log', {
+  //     interval: '1d', // rotate daily
+  //     path: path.join(__dirname, 'log')
+  // });
+  // app.use(morgan('combined', { stream: accessLogStream }));
 
   app.use(express.static('client/build'));
   app.get('*', (req, res, next) => {
