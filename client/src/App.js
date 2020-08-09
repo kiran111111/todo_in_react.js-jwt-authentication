@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
         <Route path="/" component={Home} name={localStorage.getItem("user")} />
-       <Switch> 
+        <Switch> 
           {/* <Route path="/todolist/:id" component={TodoList}></Route> */}
           <Route path="/todolist/" component={TodoList}></Route>  
           <Route path="/edit" component={EditTodo}></Route>
