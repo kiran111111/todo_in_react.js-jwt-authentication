@@ -1,8 +1,9 @@
 import React from 'react';
-import axios from 'axios';
+import axios from "axios";
+// import {mainHttp as a} from "../src/components/Axios/Axios";
 
 // const API_URL = 'http://localhost:5000';
-const API_URL = process.env.REACT_APP_URL;
+// const API_URL = process.env.REACT_APP_URL;
 
 
 export async function registerUser(user){
